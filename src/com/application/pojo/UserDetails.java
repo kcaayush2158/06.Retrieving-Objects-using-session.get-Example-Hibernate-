@@ -8,10 +8,13 @@ public class UserDetails {
     @Id
     @Column(name="id")
     private int id;
+
+    //@Basic is
+    //Transient help to hide the column
     @Column(name="username")
     private String username;
     @Column(name="date")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.DATE) //This annotation is for date and time
     private Date joinedDate;
     @Column(name="address")
     private String address;

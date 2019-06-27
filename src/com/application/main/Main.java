@@ -25,5 +25,12 @@ public class Main {
 
         session.save(user);
         session.getTransaction().commit();
+        session.close();
+        user= null;
+        session = sessionFactory.openSession();
+        session.beginTransaction();
+      user = (UserDetails) session.get(UserDetails.class,1);
+      System.out.println(user.getId()+"\t"+user.getUsername());
+      session.close();
     }
 }
